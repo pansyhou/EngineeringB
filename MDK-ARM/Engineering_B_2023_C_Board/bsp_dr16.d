@@ -40,7 +40,6 @@ engineering_b_2023_c_board\bsp_dr16.o: ../Core/Inc/usart.h
 engineering_b_2023_c_board\bsp_dr16.o: ../Core/Inc/main.h
 engineering_b_2023_c_board\bsp_dr16.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h
 engineering_b_2023_c_board\bsp_dr16.o: ../ACE-ECF/Bsp/Inc/ECF_BspConfig.h
-engineering_b_2023_c_board\bsp_dr16.o: ../Task/Inc/Detect_Task.h
 engineering_b_2023_c_board\bsp_dr16.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h
 engineering_b_2023_c_board\bsp_dr16.o: ../Core/Inc/FreeRTOSConfig.h
 engineering_b_2023_c_board\bsp_dr16.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h

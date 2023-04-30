@@ -50,6 +50,7 @@ engineering_b_2023_c_board\chassismotor.o: ../Middlewares/ST/ARM/DSP/Inc/arm_mat
 engineering_b_2023_c_board\chassismotor.o: ../Drivers/CMSIS/Include/core_cm4.h
 engineering_b_2023_c_board\chassismotor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 engineering_b_2023_c_board\chassismotor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/Detect_Task.h
 engineering_b_2023_c_board\chassismotor.o: ../ACE-ECF/Algorithm/inc/maths.h
 engineering_b_2023_c_board\chassismotor.o: ../ACE-ECF/Bsp/Inc/bsp_can.h
 engineering_b_2023_c_board\chassismotor.o: ../ACE-ECF/Algorithm/inc/fifo.h
@@ -76,4 +77,3 @@ engineering_b_2023_c_board\chassismotor.o: ../Core/Inc/can.h
 engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/Chassis_Task.h
 engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/Chassis_Fsm.h
 engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/fsm.h
-engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/Detect_Task.h

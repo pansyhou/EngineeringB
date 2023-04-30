@@ -5,6 +5,12 @@
 #define LOG_SOURCE 1
 
 #define make_int16(x,y) ((int16_t)x<<8||(int16_t)y)
+#define Chassis_Speed_Exp 10
+#define Chassis_Speed_UPPER 660
+#define Chassis_Speed_MID 500
+#define Chassis_Speed_LOWER 150
+#define Chassis_Mouse_Speed_Exp 15
+
 
 /*  系统头文件 */
 #include <stdlib.h>

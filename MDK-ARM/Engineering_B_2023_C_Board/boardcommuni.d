@@ -47,6 +47,7 @@ engineering_b_2023_c_board\boardcommuni.o: ../Middlewares/ST/ARM/DSP/Inc/arm_mat
 engineering_b_2023_c_board\boardcommuni.o: ../Drivers/CMSIS/Include/core_cm4.h
 engineering_b_2023_c_board\boardcommuni.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 engineering_b_2023_c_board\boardcommuni.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+engineering_b_2023_c_board\boardcommuni.o: ../Task/Inc/Detect_Task.h
 engineering_b_2023_c_board\boardcommuni.o: ../Control/Inc/SYSInit.h
 engineering_b_2023_c_board\boardcommuni.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 engineering_b_2023_c_board\boardcommuni.o: ../Task/Inc/Remote_Task.h
@@ -74,7 +75,6 @@ engineering_b_2023_c_board\boardcommuni.o: ../Middlewares/Third_Party/FreeRTOS/S
 engineering_b_2023_c_board\boardcommuni.o: ../Core/Inc/dma.h
 engineering_b_2023_c_board\boardcommuni.o: ../Core/Inc/gpio.h
 engineering_b_2023_c_board\boardcommuni.o: ../ACE-ECF/Algorithm/inc/maths.h
-engineering_b_2023_c_board\boardcommuni.o: ../Task/Inc/Detect_Task.h
 engineering_b_2023_c_board\boardcommuni.o: ../ACE-ECF/Bsp/Inc/bsp_can.h
 engineering_b_2023_c_board\boardcommuni.o: ../ACE-ECF/Algorithm/inc/fifo.h
 engineering_b_2023_c_board\boardcommuni.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

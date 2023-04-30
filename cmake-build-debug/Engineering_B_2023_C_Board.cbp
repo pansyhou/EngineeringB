@@ -11,10 +11,10 @@
 				<Option working_dir="E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Engineering_B_2023_C_Board.elf">
@@ -57,10 +57,10 @@
 					<Add directory="e:\application\10 2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 Engineering_B_2023_C_Board.elf"/>
-					<CompileFile command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 Engineering_B_2023_C_Board.elf"/>
+					<CompileFile command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Engineering_B_2023_C_Board.elf/fast">
@@ -103,30 +103,30 @@
 					<Add directory="e:\application\10 2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 Engineering_B_2023_C_Board.elf/fast"/>
-					<CompileFile command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 Engineering_B_2023_C_Board.elf/fast"/>
+					<CompileFile command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Jetbrain/apps/CLion/ch-0/231.8109.174/bin/mingw/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/Application/mingw64/bin/mingw32-make.exe -f &quot;E:/New_Engineering/Engineering_B_ButCmake/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>

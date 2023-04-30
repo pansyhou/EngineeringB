@@ -26,7 +26,7 @@ static void Chassis_Normal_bhv(void); /*底盘正常运动行为函数*/
 /***********************KEYBOARD*************************/
 static void KeyBoard_Prepare(void);     /*KEYBOARD状态准备函数*/
 static void KeyBoard_State(void);       /*键盘状态处理*/
-static void Upper_Device_bhv(void);     /*上装状态*/
+static void KeyBoard_bhv(void);     /*上装状态*/
 
 static void HageUP_Prepare(void);
 static void HageUP_Normal_bhv(void);

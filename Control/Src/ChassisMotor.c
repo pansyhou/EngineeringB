@@ -85,13 +85,6 @@ void Motor_Data_Deal(CAN_RxHeaderTypeDef *header, uint8_t *data) {
 
 
 
-/************************** Dongguan-University of Technology -ACE**************************
- * @brief 操作逻辑
- *      左右鼠标键：机械臂开启吸盘，关闭吸盘
- *      1.将机械伸到底，将机械臂开启到空接模式
- *      2.救援模式（UI
- *      3.兑换模式（手�?+键盘 qe键GM
-************************** Dongguan-University of Technology -ACE***************************/
 
 
 /************************** Dongguan-University of Technology -ACE**************************
@@ -133,14 +126,14 @@ void Wheel_Motor_Init(C_t *C) {
 
     //前四个电机初始化
     for (i = 0; i < 4; i++) {
-        //电机结构体清�?
+        //电机结构体清空
         MotorValZero(&C->WheelMotor[i]);
         C->WheelMotor[i].Encoder = Encoder_Init(M3508, i + 1);
         //速度环初始化
         PidInit(&C->WheelMotor[i].SPID, Spid[i][0], Spid[i][1], Spid[i][2], Integral_Limit | Output_Limit);
         PidInitMode(&C->WheelMotor[i].SPID, Integral_Limit, 200, 200);
         PidInitMode(&C->WheelMotor[i].SPID, Output_Limit, 5000, 0);
-//        位置环初始化
+        //位置环初始化
         PidInit(&C->WheelMotor[i].PPID, Ppid[i][0], Ppid[i][1], Ppid[i][2], Integral_Limit | Output_Limit);
         PidInitMode(&C->WheelMotor[i].PPID, Integral_Limit, 200, 200);
         PidInitMode(&C->WheelMotor[i].PPID, Output_Limit, 5000, 0);
@@ -151,7 +144,7 @@ void Wheel_Motor_Init(C_t *C) {
     C->liftUp.Lift_Motor[0].Encoder=Encoder_Init(M3508, 7);
     C->liftUp.Lift_Motor[1].Encoder=Encoder_Init(M3508, 8);
 
-    // PID��ʼ�� powered by ECF
+    // PID init powered by ECF
     PidInit(&C->liftUp.Lift_Motor[0].SPID, Spid[6][0], Spid[6][1], Spid[6][2], Integral_Limit | Output_Limit);
     PidInit(&C->liftUp.Lift_Motor[0].PPID, Ppid[6][0], Ppid[6][1], Ppid[6][2], Integral_Limit | Output_Limit);
 
@@ -186,16 +179,18 @@ void Wheel_Motor_Init(C_t *C) {
 }
 
 /************************** Dongguan-University of Technology -ACE**************************
- * @brief 底盘独立模式
- *
+ * @brief 底盘独立模式，右手系，食指X ，中指Y
+ *  https://pansyhou.top/Decomposition-of-mecanum-wheel-motion
  * @param C 底盘结构�?
  * @param X_IN
  * @param Y_IN
  * @param Z_IN
- * @param ExpRescue 这什么玩�?
+ * @param ExpRescue 这什么玩
  ************************** Dongguan-University of Technology -ACE***************************/
 static int32_t Lift_MotorLockPos[2];
-
+// 小轮法向量向中心
+// 1,2
+// 3,4
 void Chassis_Indepen_Drive(C_t *C, float X_IN, float Y_IN, float Z_IN, int16_t ExpRescue) {
 
     uint8_t i = 0;
@@ -213,10 +208,10 @@ void Chassis_Indepen_Drive(C_t *C, float X_IN, float Y_IN, float Z_IN, int16_t E
     C->WheelMotor[3].ExpSpeed = (X_IN + Y_IN + Z_IN);
 
     /*速度增益*/
-    C->WheelMotor[0].ExpSpeed *= 10;
-    C->WheelMotor[1].ExpSpeed *= 10;
-    C->WheelMotor[2].ExpSpeed *= 10;
-    C->WheelMotor[3].ExpSpeed *= 10;
+    C->WheelMotor[0].ExpSpeed *= ExpRescue;
+    C->WheelMotor[1].ExpSpeed *= ExpRescue;
+    C->WheelMotor[2].ExpSpeed *= ExpRescue;
+    C->WheelMotor[3].ExpSpeed *= ExpRescue;
 
     /*PID处理*/
     for (i = 0; i < 4; i++) {
@@ -258,8 +253,6 @@ void Chassis_Indepen_Drive(C_t *C, float X_IN, float Y_IN, float Z_IN, int16_t E
     //         C->WheelMotor[3].SPID.Output = SPID_OUT[3];
     // }
 
-
-
     CAN1_C620_OR_C610_201_TO_204_SendMsg(C->WheelMotor[0].SPID.out, C->WheelMotor[1].SPID.out,
                                          C->WheelMotor[2].SPID.out, C->WheelMotor[3].SPID.out);
 
@@ -286,13 +279,16 @@ void Lift_Up_Drive(C_t *C,int32_t UP_IN){
 
 void Chassis_PowerOff_Drive(C_t *C) {
 //    HAL_NVIC_SystemReset();
+    //P , lock chassis position
     for (int i = 0; i < 4; i++) {
         motor_position_speed_control(&C->WheelMotor[i].SPID, &C->WheelMotor[i].PPID, C->WheelMotor_EPB_Pos[i],
                                      C->WheelMotor[i].Encoder->Encode_Record_Val, C->WheelMotor[i].Encoder->Speed[1]);
     }
     CAN1_C620_OR_C610_201_TO_204_SendMsg(C->WheelMotor[0].SPID.out, C->WheelMotor[1].SPID.out,
                                          C->WheelMotor[2].SPID.out, C->WheelMotor[3].SPID.out);
-		Lift_Up_Drive(C, 0);
+	//P , lock lift position
+    Lift_Up_Drive(C, 0);
+
 }
 
 

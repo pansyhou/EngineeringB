@@ -50,6 +50,7 @@ engineering_b_2023_c_board\chassis_task.o: ../Middlewares/ST/ARM/DSP/Inc/arm_mat
 engineering_b_2023_c_board\chassis_task.o: ../Drivers/CMSIS/Include/core_cm4.h
 engineering_b_2023_c_board\chassis_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 engineering_b_2023_c_board\chassis_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+engineering_b_2023_c_board\chassis_task.o: ../Task/Inc/Detect_Task.h
 engineering_b_2023_c_board\chassis_task.o: ../Task/Inc/Chassis_Task.h
 engineering_b_2023_c_board\chassis_task.o: ../Task/Inc/Chassis_Fsm.h
 engineering_b_2023_c_board\chassis_task.o: ../Task/Inc/fsm.h

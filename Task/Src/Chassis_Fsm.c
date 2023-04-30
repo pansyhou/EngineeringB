@@ -20,6 +20,7 @@
 #include "Chassis_Fsm.h"
 #include "Chassis_Task.h"
 #include "bsp_can.h"
+#include "SYSInit.h"
 /*底盘控制总结构体*/
 extern Chassis_t Chassis;
 
@@ -67,7 +68,7 @@ void Chassis_FSM_Init(void)
     INDEPEN.State_Process = Indepen_State;
     INDEPEN.State_Prepare = Indepen_Prepare;
 	
-	    /*HAGEUP状态初始化*/
+    /*HAGEUP状态初始化*/
     HAGEUP.Behavior_Process = NULL;
     HAGEUP.State_Process = HageUP_State;
     HAGEUP.State_Prepare = HageUP_Prepare;
@@ -82,10 +83,10 @@ void Chassis_FSM_Init(void)
     // ROTATION.State_Process = Rotation_State;
     // ROTATION.State_Prepare = Rotation_Prepare;
 		
-    // /*KEYBOARD状态初始化*/
-    // KEYBOARD.Behavior_Process = NULL;
-    // KEYBOARD.State_Process = KeyBoard_State;
-    // KEYBOARD.State_Prepare = KeyBoard_Prepare;
+     /*KEYBOARD状态初始化*/
+     KEYBOARD.State_Prepare = KeyBoard_Prepare;
+     KEYBOARD.State_Process = KeyBoard_State;
+     KEYBOARD.Behavior_Process = KeyBoard_bhv;
 		
     // /*CTRL_GRASP状态初始化*/
     // CTRL_GRASP.Behavior_Process = NULL;
@@ -98,11 +99,11 @@ void Chassis_FSM_Init(void)
     // RESCUE.State_Prepare = Rescue_Prepare;
 
     /*底盘状态机初始化*/
-    Chassis_State_Table[0][0] = INDEPEN;    //s1=1 ,s2=1 底盘独立INDEPEN
+    Chassis_State_Table[0][0] = KEYBOARD;    //s1=1 ,s2=1 底盘独立INDEPEN
     Chassis_State_Table[0][2] = OFFLINE;     //s1=1  s2=3 
     Chassis_State_Table[0][1] = OFFLINE;    //s1=1  s2=2 
     Chassis_State_Table[1][0] = OFFLINE;     //s1=2  s2=1 
-    Chassis_State_Table[1][1] = OFFLINE; //s1=2  s2=2 
+    Chassis_State_Table[1][1] = INDEPEN; //s1=2  s2=2
     Chassis_State_Table[1][2] = OFFLINE; //s1=2  s2=3 夹取
     Chassis_State_Table[2][0] = OFFLINE;   //s1=3 s2=1  键盘
     Chassis_State_Table[2][1] = OFFLINE; //s1=3 s2=2  
@@ -153,7 +154,7 @@ static void Indepen_Prepare(void)
 static void Indepen_State(void)
 {
     
-}   
+}    
 
 /************************** Dongguan-University of Technology -ACE**************************
  * @brief 底盘正常运动行为函数
@@ -161,10 +162,29 @@ static void Indepen_State(void)
 ************************** Dongguan-University of Technology -ACE***************************/
 static void Chassis_Normal_bhv(void)
 {
-    Chassis.Indepen(&Chassis.C, -Chassis.RC->RC_ctrl->rc.ch[3], -Chassis.RC->RC_ctrl->rc.ch[2], -Chassis.RC->RC_ctrl->rc.ch[0],0);
+    Chassis.Indepen(&Chassis.C, -Chassis.RC->RC_ctrl->rc.ch[3], -Chassis.RC->RC_ctrl->rc.ch[2], -Chassis.RC->RC_ctrl->rc.ch[0],Chassis_Speed_Exp);
     Lift_Up_Drive(&Chassis.C, Chassis.RC->RC_ctrl->rc.ch[4] * 20);
 }
 
+static void KeyBoard_Prepare(void)     /*KEYBOARD状态准备函数*/
+{
+
+}
+static void KeyBoard_State(void)       /*键盘状态处理*/
+{
+//    if (Chassis.RC->state.Global_Status == Follow_Independent) {
+//        Chassis.Indepen(&Chassis.C, Chassis.RC->RC_ctrl->key.kv0, Chassis.RC->RC_ctrl->key.kv1,
+//                        Chassis.RC->RC_ctrl->mouse.x, Chassis_Speed_Exp);
+//    }
+}
+
+static void KeyBoard_bhv(void)       /*键盘状态处理*/
+{
+    if (Chassis.RC->state.Global_Status == Follow_Independent) {
+        Chassis.Indepen(&Chassis.C, -Chassis.RC->KM_X.out, -Chassis.RC->KM_Y.out,
+                        -Chassis.RC->KM_Z.out, Chassis_Speed_Exp);
+    }
+}
 
 
 

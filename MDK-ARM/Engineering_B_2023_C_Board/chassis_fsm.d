@@ -53,6 +53,7 @@ engineering_b_2023_c_board\chassis_fsm.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math
 engineering_b_2023_c_board\chassis_fsm.o: ../Drivers/CMSIS/Include/core_cm4.h
 engineering_b_2023_c_board\chassis_fsm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 engineering_b_2023_c_board\chassis_fsm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+engineering_b_2023_c_board\chassis_fsm.o: ../Task/Inc/Detect_Task.h
 engineering_b_2023_c_board\chassis_fsm.o: ../ACE-ECF/Bsp/Inc/bsp_can.h
 engineering_b_2023_c_board\chassis_fsm.o: ../ACE-ECF/Algorithm/inc/fifo.h
 engineering_b_2023_c_board\chassis_fsm.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
@@ -75,3 +76,9 @@ engineering_b_2023_c_board\chassis_fsm.o: ../Middlewares/Third_Party/FreeRTOS/So
 engineering_b_2023_c_board\chassis_fsm.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 engineering_b_2023_c_board\chassis_fsm.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 engineering_b_2023_c_board\chassis_fsm.o: ../Core/Inc/can.h
+engineering_b_2023_c_board\chassis_fsm.o: ../Control/Inc/SYSInit.h
+engineering_b_2023_c_board\chassis_fsm.o: ../Task/Inc/Remote_Task.h
+engineering_b_2023_c_board\chassis_fsm.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+engineering_b_2023_c_board\chassis_fsm.o: ../Core/Inc/dma.h
+engineering_b_2023_c_board\chassis_fsm.o: ../Core/Inc/gpio.h
+engineering_b_2023_c_board\chassis_fsm.o: ../ACE-ECF/Algorithm/inc/maths.h

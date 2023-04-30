@@ -47,6 +47,7 @@ engineering_b_2023_c_board\remote_task.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math
 engineering_b_2023_c_board\remote_task.o: ../Drivers/CMSIS/Include/core_cm4.h
 engineering_b_2023_c_board\remote_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 engineering_b_2023_c_board\remote_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+engineering_b_2023_c_board\remote_task.o: ../Task/Inc/Detect_Task.h
 engineering_b_2023_c_board\remote_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 engineering_b_2023_c_board\remote_task.o: ../Core/Inc/FreeRTOSConfig.h
 engineering_b_2023_c_board\remote_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
