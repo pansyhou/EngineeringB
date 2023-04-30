@@ -1359,6 +1359,11 @@
               <FileType>1</FileType>
               <FilePath>..\Control\Src\SYSInit.c</FilePath>
             </File>
+            <File>
+              <FileName>SYSInit.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Control\Inc\SYSInit.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

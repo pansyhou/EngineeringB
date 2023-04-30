@@ -77,3 +77,8 @@ engineering_b_2023_c_board\chassismotor.o: ../Core/Inc/can.h
 engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/Chassis_Task.h
 engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/Chassis_Fsm.h
 engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/fsm.h
+engineering_b_2023_c_board\chassismotor.o: ../Control/Inc/SYSInit.h
+engineering_b_2023_c_board\chassismotor.o: ../Task/Inc/Remote_Task.h
+engineering_b_2023_c_board\chassismotor.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+engineering_b_2023_c_board\chassismotor.o: ../Core/Inc/dma.h
+engineering_b_2023_c_board\chassismotor.o: ../Core/Inc/gpio.h

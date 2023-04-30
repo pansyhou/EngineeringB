@@ -47,6 +47,7 @@ engineering_b_2023_c_board\remotedeal.o: ../Drivers/CMSIS/Include/core_cm4.h
 engineering_b_2023_c_board\remotedeal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 engineering_b_2023_c_board\remotedeal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 engineering_b_2023_c_board\remotedeal.o: ../Task/Inc/Detect_Task.h
+engineering_b_2023_c_board\remotedeal.o: ../ACE-ECF/Algorithm/inc/pid.h
 engineering_b_2023_c_board\remotedeal.o: ../ACE-ECF/Algorithm/inc/maths.h
 engineering_b_2023_c_board\remotedeal.o: ../Control/Inc/SYSInit.h
 engineering_b_2023_c_board\remotedeal.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
@@ -56,7 +57,6 @@ engineering_b_2023_c_board\remotedeal.o: ../Task/Inc/Chassis_Fsm.h
 engineering_b_2023_c_board\remotedeal.o: ../Task/Inc/fsm.h
 engineering_b_2023_c_board\remotedeal.o: ../Control/Inc/ChassisMotor.h
 engineering_b_2023_c_board\remotedeal.o: ../Control/Inc/rmmotor.h
-engineering_b_2023_c_board\remotedeal.o: ../ACE-ECF/Algorithm/inc/pid.h
 engineering_b_2023_c_board\remotedeal.o: ../ACE-ECF/Bsp/Inc/bsp_Motor_Encoder.h
 engineering_b_2023_c_board\remotedeal.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h
 engineering_b_2023_c_board\remotedeal.o: ../Core/Inc/FreeRTOSConfig.h

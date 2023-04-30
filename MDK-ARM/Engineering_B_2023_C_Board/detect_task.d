@@ -64,12 +64,12 @@ engineering_b_2023_c_board\detect_task.o: ../ACE-ECF/Algorithm/inc/filter.h
 engineering_b_2023_c_board\detect_task.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
 engineering_b_2023_c_board\detect_task.o: ../Drivers/CMSIS/Include/core_cm4.h
 engineering_b_2023_c_board\detect_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+engineering_b_2023_c_board\detect_task.o: ../ACE-ECF/Algorithm/inc/pid.h
 engineering_b_2023_c_board\detect_task.o: ../Task/Inc/Chassis_Task.h
 engineering_b_2023_c_board\detect_task.o: ../Task/Inc/Chassis_Fsm.h
 engineering_b_2023_c_board\detect_task.o: ../Task/Inc/fsm.h
 engineering_b_2023_c_board\detect_task.o: ../Control/Inc/ChassisMotor.h
 engineering_b_2023_c_board\detect_task.o: ../Control/Inc/rmmotor.h
-engineering_b_2023_c_board\detect_task.o: ../ACE-ECF/Algorithm/inc/pid.h
 engineering_b_2023_c_board\detect_task.o: ../ACE-ECF/Bsp/Inc/bsp_Motor_Encoder.h
 engineering_b_2023_c_board\detect_task.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 engineering_b_2023_c_board\detect_task.o: ../Core/Inc/dma.h

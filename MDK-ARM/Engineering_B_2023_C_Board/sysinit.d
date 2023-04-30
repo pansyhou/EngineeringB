@@ -50,12 +50,12 @@ engineering_b_2023_c_board\sysinit.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
 engineering_b_2023_c_board\sysinit.o: ../Drivers/CMSIS/Include/core_cm4.h
 engineering_b_2023_c_board\sysinit.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 engineering_b_2023_c_board\sysinit.o: ../Task/Inc/Detect_Task.h
+engineering_b_2023_c_board\sysinit.o: ../ACE-ECF/Algorithm/inc/pid.h
 engineering_b_2023_c_board\sysinit.o: ../Task/Inc/Chassis_Task.h
 engineering_b_2023_c_board\sysinit.o: ../Task/Inc/Chassis_Fsm.h
 engineering_b_2023_c_board\sysinit.o: ../Task/Inc/fsm.h
 engineering_b_2023_c_board\sysinit.o: ../Control/Inc/ChassisMotor.h
 engineering_b_2023_c_board\sysinit.o: ../Control/Inc/rmmotor.h
-engineering_b_2023_c_board\sysinit.o: ../ACE-ECF/Algorithm/inc/pid.h
 engineering_b_2023_c_board\sysinit.o: ../ACE-ECF/Bsp/Inc/bsp_Motor_Encoder.h
 engineering_b_2023_c_board\sysinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h
 engineering_b_2023_c_board\sysinit.o: ../Core/Inc/FreeRTOSConfig.h

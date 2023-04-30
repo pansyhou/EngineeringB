@@ -5,7 +5,7 @@
 #include "Chassis_Task.h"
 #include "bsp_Motor_Encoder.h"
 #include "Detect_Task.h"
-
+#include "SYSInit.h"
 //CAN1接受中断进detecthook频率（也可以理解为计数器，到点再进）
 #define CAN_IRQ_DETECT_FREQ 3000
 #define MAX_ABS_HIGHT 155648
@@ -130,10 +130,13 @@ void Wheel_Motor_Init(C_t *C) {
         MotorValZero(&C->WheelMotor[i]);
         C->WheelMotor[i].Encoder = Encoder_Init(M3508, i + 1);
         //速度环初始化
-        PidInit(&C->WheelMotor[i].SPID, Spid[i][0], Spid[i][1], Spid[i][2], Integral_Limit | Output_Limit);
+        PidInit(&C->WheelMotor[i].SPID, Spid[i][0], Spid[i][1], Spid[i][2], StepIn | Integral_Limit | Output_Limit );
         PidInitMode(&C->WheelMotor[i].SPID, Integral_Limit, 200, 200);
-        PidInitMode(&C->WheelMotor[i].SPID, Output_Limit, 5000, 0);
+        PidInitMode(&C->WheelMotor[i].SPID, Output_Limit, Chassis_MAX_Output, 0);
+        PidInitMode(&C->WheelMotor[i].SPID, StepIn, 20.0F, 0);
+//        PidInitMode(&C->WheelMotor[i].SPID, OutputFilter, CHASSIS_FIRST_ORDER_FILTER_K, 0);
         //位置环初始化
+
         PidInit(&C->WheelMotor[i].PPID, Ppid[i][0], Ppid[i][1], Ppid[i][2], Integral_Limit | Output_Limit);
         PidInitMode(&C->WheelMotor[i].PPID, Integral_Limit, 200, 200);
         PidInitMode(&C->WheelMotor[i].PPID, Output_Limit, 5000, 0);
@@ -218,6 +221,7 @@ void Chassis_Indepen_Drive(C_t *C, float X_IN, float Y_IN, float Z_IN, int16_t E
         PidCalculate(&C->WheelMotor[i].SPID, C->WheelMotor[i].ExpSpeed, C->WheelMotor[i].Encoder->Speed[1]); //得到输出�?
         //        Val[i] = C->WheelMotor[i].Encoder->Speed[1];    //记录电机实时速度�?
     }
+
 
     // /*底盘电机运动失真处理，处理的前提是将PID输出值与速度值认为有线�?�关�?*/
     // MAX = RETURN_MAX(Val, 4); //获取�?大�?�度

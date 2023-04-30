@@ -9,8 +9,19 @@
 #define Chassis_Speed_UPPER 660
 #define Chassis_Speed_MID 500
 #define Chassis_Speed_LOWER 150
-#define Chassis_Mouse_Speed_Exp 15
+#define Chassis_Mouse_Speed_Exp 100
 
+#define CHASSIS_PSEED_X_KP 8.0f
+#define CHASSIS_PSEED_X_KI 0.0f
+#define CHASSIS_PSEED_X_KD 10.8f
+
+#define CHASSIS_PSEED_Y_KP 8.0f
+#define CHASSIS_PSEED_Y_KI 0.0f
+#define CHASSIS_PSEED_Y_KD 10.8f
+#define CHASSIS_FIRST_ORDER_FILTER_K 0.0410f
+
+
+#define Chassis_MAX_Output 6000
 
 /*  系统头文件 */
 #include <stdlib.h>

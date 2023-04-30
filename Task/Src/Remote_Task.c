@@ -22,6 +22,6 @@ void Remote_Task(void *pvParameters)
     {
 
         Remote_Data_Deal();
-        vTaskDelay(10);
+        vTaskDelay(2);
     }
 }

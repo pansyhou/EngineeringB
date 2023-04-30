@@ -90,16 +90,11 @@ void Remote_Data_Init(void)
     first_order_filter_init(&REMOTE.RC_Y, 0.08);
     first_order_filter_init(&REMOTE.RC_Z, 0.08);
 
-    first_order_filter_init(&REMOTE.KM_X, 0.08);
-    first_order_filter_init(&REMOTE.KM_Y, 0.08);
-    first_order_filter_init(&REMOTE.KM_Z, 0.99);
+//    first_order_filter_init(&REMOTE.KM_X, 0.08);
+//    first_order_filter_init(&REMOTE.KM_Y, 0.08);
+//    first_order_filter_init(&REMOTE.KM_Z, 0.99);
 
-    PidInit(&chassis_data_init_f->Chassis_speedX_Pid, CHASSIS_PSEED_X_KP, CHASSIS_PSEED_X_KI, CHASSIS_PSEED_X_KD, StepIn | OutputFilter);
-    PidInit(&chassis_data_init_f->Chassis_speedY_Pid, CHASSIS_PSEED_Y_KP, CHASSIS_PSEED_Y_KI, CHASSIS_PSEED_Y_KD, StepIn | OutputFilter);
-    PidInitMode(&chassis_data_init_f->Chassis_speedX_Pid, StepIn, 3.0F, 0);
-    PidInitMode(&chassis_data_init_f->Chassis_speedY_Pid, StepIn, 3.0F, 0);
-    PidInitMode(&chassis_data_init_f->Chassis_speedX_Pid, OutputFilter, CHASSIS_FIRST_ORDER_FILTER_K, 0);
-    PidInitMode(&chassis_data_init_f->Chassis_speedY_Pid, OutputFilter, CHASSIS_FIRST_ORDER_FILTER_K, 0);
+
 
 
     /*获取遥控指针*/
@@ -237,9 +232,9 @@ static void Key_Mouse_Deal(void)
     REMOTE.RC_ctrl->key.kv1=ad[0]+ad[1];
 
     /*************************************鼠标X轴************************************/
-    REMOTE.RC_ctrl->mouse.x *= Chassis_Mouse_Speed_Exp;
+    REMOTE.RC_ctrl->key.kv2 = REMOTE.RC_ctrl->mouse.x * Chassis_Mouse_Speed_Exp;
     /**************************************鼠标Y轴***********************************/
-    REMOTE.RC_ctrl->mouse.y *= Chassis_Mouse_Speed_Exp;
+    REMOTE.RC_ctrl->key.kv3 = REMOTE.RC_ctrl->mouse.y * Chassis_Mouse_Speed_Exp;
 
     //"dog doesn't even use a first-order filter."
 //    first_order_filter(&REMOTE.KM_X, REMOTE.RC_ctrl->key.kv0);
