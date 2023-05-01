@@ -46,7 +46,7 @@ void Chassis_Task(void *pvParameters)
     while(1)
     {
         FSM_Deal(Chassis.Fsm,Chassis.RC->RC_ctrl->rc.s1,Chassis.RC->RC_ctrl->rc.s2);
-        vTaskDelay(3);
+        vTaskDelay(2);
 //				Test_Log("hi\r\n");
     }
 }

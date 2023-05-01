@@ -59,6 +59,21 @@ void Motor_Data_Deal(CAN_RxHeaderTypeDef *header, uint8_t *data) {
             Chassis.C.WheelMotor[3].temp = (int16_t) (data[6]);//当前电机温度
         }
             break;
+        case CAN_M3508_MOTOR5_ID: {
+            CAN_DATA_Encoder_Deal((int16_t) ((data[0] << 8) + (data[1])), //电机位置
+                                  (int16_t) ((data[2] << 8) + (data[3])), //电机速度
+                                  5);
+            Chassis.C.CameraTransmission.Pitch_Motor.anper = (int16_t) ((data[4] << 8) + (data[5]));//当前电机点流
+            Chassis.C.CameraTransmission.Pitch_Motor.temp = (int16_t) (data[6]);//当前电机温度
+        }break;
+        case CAN_M3508_MOTOR6_ID: {
+            CAN_DATA_Encoder_Deal((int16_t) ((data[0] << 8) + (data[1])), //电机位置
+                                  (int16_t) ((data[2] << 8) + (data[3])), //电机速度
+                                  6);
+            Chassis.C.CameraTransmission.Yaw_Motor.anper = (int16_t) ((data[4] << 8) + (data[5]));//当前电机点流
+            Chassis.C.CameraTransmission.Yaw_Motor.temp = (int16_t) (data[6]);//当前电机温度
+        }break;
+
         case CAN_M3508_MOTOR7_ID: {
             CAN_DATA_Encoder_Deal((int16_t) ((data[0] << 8) + (data[1])), //电机位置
                                   (int16_t) ((data[2] << 8) + (data[3])), //电机速度
@@ -66,13 +81,7 @@ void Motor_Data_Deal(CAN_RxHeaderTypeDef *header, uint8_t *data) {
             Chassis.C.liftUp.Lift_Motor[0].anper = (int16_t) ((data[4] << 8) + (data[5]));//当前电机点流
             Chassis.C.liftUp.Lift_Motor[0].temp = (int16_t) (data[6]);//当前电机温度
         }break;
-				case CAN_M3508_MOTOR8_ID: {
-            CAN_DATA_Encoder_Deal((int16_t) ((data[0] << 8) + (data[1])), //电机位置
-                                  (int16_t) ((data[2] << 8) + (data[3])), //电机速度
-                                  8);
-            Chassis.C.liftUp.Lift_Motor[1].anper = (int16_t) ((data[4] << 8) + (data[5]));//当前电机点流
-            Chassis.C.liftUp.Lift_Motor[1].temp = (int16_t) (data[6]);//当前电机温度
-        }break;
+
 
     }
     if (Can_IRQ_Count == CAN_IRQ_DETECT_FREQ) {
@@ -96,7 +105,7 @@ void Wheel_Motor_Init(C_t *C) {
 
     ECF_CAN_Rx_Callback_Register(&can1_manage, Motor_Data_Deal);
 
-    float Spid[9][3] =
+    float Spid[11][3] =
             {
                     {WHEEL_MOTOR1_P, WHEEL_MOTOR1_I, WHEEL_MOTOR1_D},
                     {WHEEL_MOTOR2_P, WHEEL_MOTOR2_I, WHEEL_MOTOR2_D},
@@ -105,18 +114,22 @@ void Wheel_Motor_Init(C_t *C) {
                     {RESCUE_S_P,     RESCUE_S_I,     RESCUE_S_D},
                     {BARRIER_S_P,    BARRIER_S_I,    BARRIER_S_D},
                     {Lift_Motor1_Spid_P, Lift_Motor1_Spid_I, Lift_Motor1_Spid_D},
-                    {Lift_Motor2_Spid_P, Lift_Motor2_Spid_I, Lift_Motor2_Spid_D}
+                    {Lift_Motor2_Spid_P, Lift_Motor2_Spid_I, Lift_Motor2_Spid_D},
+                    {Gimbal_PITCH_S_P,Gimbal_PITCH_S_I,Gimbal_PITCH_S_D},
+                    {Gimbal_YAW_S_P,Gimbal_YAW_S_I,Gimbal_YAW_S_D}
             };
-    float Ppid[9][3] =
+    float Ppid[11][3] =
             {
                     {WHEEL_MOTOR1_POS_P, WHEEL_MOTOR1_POS_I, WHEEL_MOTOR1_POS_D},
                     {WHEEL_MOTOR2_POS_P, WHEEL_MOTOR2_POS_I, WHEEL_MOTOR2_POS_D},
                     {WHEEL_MOTOR3_POS_P, WHEEL_MOTOR3_POS_I, WHEEL_MOTOR3_POS_D},
                     {WHEEL_MOTOR4_POS_P, WHEEL_MOTOR4_POS_I, WHEEL_MOTOR4_POS_D},
-                    {RESCUE_S_P,     RESCUE_S_I,     RESCUE_S_D},
-                    {BARRIER_S_P,    BARRIER_S_I,    BARRIER_S_D},
+                    {RESCUE_S_P,         RESCUE_S_I,         RESCUE_S_D},
+                    {BARRIER_S_P,        BARRIER_S_I,        BARRIER_S_D},
                     {Lift_Motor1_Ppid_P, Lift_Motor1_Ppid_I, Lift_Motor1_Ppid_D},
-                    {Lift_Motor2_Ppid_P, Lift_Motor2_Ppid_I, Lift_Motor2_Ppid_D}
+                    {Lift_Motor2_Ppid_P, Lift_Motor2_Ppid_I, Lift_Motor2_Ppid_D},
+                    {Gimbal_PITCH_P_P,   Gimbal_PITCH_P_I,   Gimbal_PITCH_P_D},
+                    {Gimbal_YAW_P_P,     Gimbal_YAW_P_I,     Gimbal_YAW_P_D}
             };
     // 函数映射
     uint8_t i = 0;
@@ -130,10 +143,10 @@ void Wheel_Motor_Init(C_t *C) {
         MotorValZero(&C->WheelMotor[i]);
         C->WheelMotor[i].Encoder = Encoder_Init(M3508, i + 1);
         //速度环初始化
-        PidInit(&C->WheelMotor[i].SPID, Spid[i][0], Spid[i][1], Spid[i][2], StepIn | Integral_Limit | Output_Limit );
+        PidInit(&C->WheelMotor[i].SPID, Spid[i][0], Spid[i][1], Spid[i][2],   Integral_Limit | Output_Limit );
         PidInitMode(&C->WheelMotor[i].SPID, Integral_Limit, 200, 200);
         PidInitMode(&C->WheelMotor[i].SPID, Output_Limit, Chassis_MAX_Output, 0);
-        PidInitMode(&C->WheelMotor[i].SPID, StepIn, 20.0F, 0);
+//        PidInitMode(&C->WheelMotor[i].SPID, StepIn, 20.0F, 0);
 //        PidInitMode(&C->WheelMotor[i].SPID, OutputFilter, CHASSIS_FIRST_ORDER_FILTER_K, 0);
         //位置环初始化
 
@@ -144,13 +157,16 @@ void Wheel_Motor_Init(C_t *C) {
 
     MotorValZero(&C->liftUp.Lift_Motor[0]);
     MotorValZero(&C->liftUp.Lift_Motor[1]);
+    MotorValZero(&C->CameraTransmission.Pitch_Motor);
+    MotorValZero(&C->CameraTransmission.Yaw_Motor);
+    C->CameraTransmission.Pitch_Motor.Encoder=Encoder_Init(M3508, 5);
+    C->CameraTransmission.Yaw_Motor.Encoder=Encoder_Init(M3508, 6);
     C->liftUp.Lift_Motor[0].Encoder=Encoder_Init(M3508, 7);
     C->liftUp.Lift_Motor[1].Encoder=Encoder_Init(M3508, 8);
 
     // PID init powered by ECF
     PidInit(&C->liftUp.Lift_Motor[0].SPID, Spid[6][0], Spid[6][1], Spid[6][2], Integral_Limit | Output_Limit);
     PidInit(&C->liftUp.Lift_Motor[0].PPID, Ppid[6][0], Ppid[6][1], Ppid[6][2], Integral_Limit | Output_Limit);
-
     PidInit(&C->liftUp.Lift_Motor[1].SPID, Spid[7][0], Spid[7][1], Spid[7][2], Integral_Limit | Output_Limit);
     PidInit(&C->liftUp.Lift_Motor[1].PPID, Ppid[7][0], Ppid[7][1], Ppid[7][2], Integral_Limit | Output_Limit);
 
@@ -164,6 +180,32 @@ void Wheel_Motor_Init(C_t *C) {
     PidInitMode(&C->liftUp.Lift_Motor[1].SPID, Output_Limit, 9000, 0);
     PidInitMode(&C->liftUp.Lift_Motor[1].PPID, Integral_Limit, 200, 200);
     PidInitMode(&C->liftUp.Lift_Motor[1].PPID, Output_Limit, 9000, 0);
+
+    //gimbal pitch init
+    //电机结构体清空
+    MotorValZero(&C->CameraTransmission.Pitch_Motor);
+    MotorValZero(&C->CameraTransmission.Yaw_Motor);
+    C->CameraTransmission.Pitch_Motor.Encoder = Encoder_Init(M3508, 5);
+    C->CameraTransmission.Yaw_Motor.Encoder = Encoder_Init(M3508, 6);
+    //速度环初始化
+    PidInit(&C->CameraTransmission.Pitch_Motor.SPID, Spid[8][0], Spid[8][1], Spid[8][2],   Integral_Limit | Output_Limit );
+    PidInitMode(&C->CameraTransmission.Pitch_Motor.SPID, Integral_Limit, 200, 200);
+    PidInitMode(&C->CameraTransmission.Pitch_Motor.SPID, Output_Limit, 5000, 0);
+
+    //位置环初始化
+    PidInit(&C->CameraTransmission.Pitch_Motor.PPID, Ppid[8][0], Ppid[8][1], Ppid[8][2], Integral_Limit | Output_Limit);
+    PidInitMode(&C->CameraTransmission.Pitch_Motor.PPID, Integral_Limit, 200, 200);
+    PidInitMode(&C->CameraTransmission.Pitch_Motor.PPID, Output_Limit, 5000, 0);
+
+    //速度环初始化
+    PidInit(&C->CameraTransmission.Yaw_Motor.SPID, Spid[9][0], Spid[9][1], Spid[9][2],   Integral_Limit | Output_Limit );
+    PidInitMode(&C->CameraTransmission.Yaw_Motor.SPID, Integral_Limit, 200, 200);
+    PidInitMode(&C->CameraTransmission.Yaw_Motor.SPID, Output_Limit, 5000, 0);
+
+    //位置环初始化
+    PidInit(&C->CameraTransmission.Yaw_Motor.PPID, Ppid[9][0], Ppid[9][1], Ppid[9][2], Integral_Limit | Output_Limit);
+    PidInitMode(&C->CameraTransmission.Yaw_Motor.PPID, Integral_Limit, 200, 200);
+    PidInitMode(&C->CameraTransmission.Yaw_Motor.PPID, Output_Limit, 5000, 0);
 
 //    //救援�?5初始�?
 //    MotorValZero(&C->WheelMotor[4]);

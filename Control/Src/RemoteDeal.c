@@ -133,7 +133,7 @@ static void Key_Mouse_Deal(void)
     int16_t ad[2]={0,0};
 
     //整车状态切换
-    if (key & KEY_PRESSED_OFFSET_G) {
+    if (key & KEY_PRESSED_OFFSET_G && !(REMOTE.last_key & KEY_PRESSED_OFFSET_G)) {
         REMOTE.state.Global_Status = 1 - REMOTE.state.Global_Status;
     }
 
@@ -231,11 +231,13 @@ static void Key_Mouse_Deal(void)
     }
     REMOTE.RC_ctrl->key.kv1=ad[0]+ad[1];
 
-    /*************************************鼠标X轴************************************/
-    REMOTE.RC_ctrl->key.kv2 = REMOTE.RC_ctrl->mouse.x * Chassis_Mouse_Speed_Exp;
-    /**************************************鼠标Y轴***********************************/
-    REMOTE.RC_ctrl->key.kv3 = REMOTE.RC_ctrl->mouse.y * Chassis_Mouse_Speed_Exp;
+//    /*************************************鼠标X轴************************************/
+//    REMOTE.RC_ctrl->key.kv2 = REMOTE.RC_ctrl->mouse.x * Chassis_Mouse_Speed_Exp;
+//    /**************************************鼠标Y轴***********************************/
+//    REMOTE.RC_ctrl->key.kv3 = REMOTE.RC_ctrl->mouse.y * Chassis_Mouse_Speed_Exp;
 
+    //更新上一次的key值
+    REMOTE.last_key = REMOTE.RC_ctrl->key.v;
     //"dog doesn't even use a first-order filter."
 //    first_order_filter(&REMOTE.KM_X, REMOTE.RC_ctrl->key.kv0);
 //    first_order_filter(&REMOTE.KM_Y, REMOTE.RC_ctrl->key.kv1);
@@ -407,11 +409,10 @@ void Remote_Data_Deal(void)
     if(REMOTE.RC_ctrl->rc.s1==1&&REMOTE.RC_ctrl->rc.s2==1)
     {
         Key_Mouse_Deal();
-        detect_hook(DBUS_TOE);//记录在线时间
     }
     else{
         Rc_Deal();
-        detect_hook(DBUS_TOE);
+
     }
 
 

@@ -9,7 +9,7 @@
 #define Chassis_Speed_UPPER 660
 #define Chassis_Speed_MID 500
 #define Chassis_Speed_LOWER 150
-#define Chassis_Mouse_Speed_Exp 100
+#define Chassis_Mouse_Speed_Exp 15
 
 #define CHASSIS_PSEED_X_KP 8.0f
 #define CHASSIS_PSEED_X_KI 0.0f

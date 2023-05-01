@@ -64,6 +64,7 @@ typedef __packed struct
 typedef __packed struct
 {
     RC_ctrl_t *RC_ctrl;
+    uint16_t last_key;
     first_order_filter_type_t RC_X;
     first_order_filter_type_t RC_Y;
     first_order_filter_type_t RC_Z;

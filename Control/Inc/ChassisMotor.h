@@ -75,14 +75,20 @@
 #define  BARRIER_P_I   0.0f
 #define  BARRIER_P_D   1.0f 
 
-/**下云台电机**/
+/**云台电机**/
 #define Gimbal_YAW_S_P  1.0f
 #define Gimbal_YAW_S_I  0.0f
-#define Gimbal_YAW_S_D  1.0f
-#define Gimbal_YAW_P_P  10.0f
+#define Gimbal_YAW_S_D  0.0f
+#define Gimbal_YAW_P_P  1.0f
 #define Gimbal_YAW_P_I  0.0f
-#define Gimbal_YAW_P_D  1.0f
+#define Gimbal_YAW_P_D  0.0f
 
+#define Gimbal_PITCH_S_P  1.0f
+#define Gimbal_PITCH_S_I  0.0f
+#define Gimbal_PITCH_S_D  0.0f
+#define Gimbal_PITCH_P_P  1.0f
+#define Gimbal_PITCH_P_I  0.0f
+#define Gimbal_PITCH_P_D  0.0f
 
 /**************************************************速度定义**********************************/
 static const int16_t Rescue_Speed    = 3000;   //救援电机速度
@@ -97,12 +103,22 @@ typedef __packed struct
 //    Encoder_t *Rotary_Encoder;
 }Lift_UP_t;
 
+typedef __packed struct _Camera_Transmission
+{
+    Motor_t Pitch_Motor;
+    Motor_t Yaw_Motor;
+
+}Camera_Transmission_t;
+
+
+
 /*底盘结构体*/
 typedef __packed struct
 {
 	Motor_t WheelMotor[7];
     int32_t WheelMotor_EPB_Pos[4];
     Lift_UP_t liftUp;
+    Camera_Transmission_t CameraTransmission;
 //	PYR_t *gyro;
 	// PIDTypeDef Yaw_Pid;
 	void (*Can_Send_Wheel)(int16_t,int16_t,int16_t,int16_t);

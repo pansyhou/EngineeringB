@@ -182,7 +182,7 @@ static void KeyBoard_bhv(void)       /*键盘状态处理*/
 {
     if (Chassis.RC->state.Global_Status == Follow_Independent) {
         Chassis.Indepen(&Chassis.C, -Chassis.RC->RC_ctrl->key.kv0, -Chassis.RC->RC_ctrl->key.kv1,
-                        -Chassis.RC->RC_ctrl->key.kv3, Chassis_Speed_Exp);
+                        -Chassis.RC->RC_ctrl->mouse.x*Chassis_Mouse_Speed_Exp, Chassis_Speed_Exp);
 
     }
 }

@@ -57,6 +57,7 @@ static void detect_init(uint32_t time) {
     }
 
     error_list[DBUS_TOE].solve_lost_fun = &RC_Check_Data_IS_ERROR;
+//    error_list[DBUS_TOE].solve_lost_fun = &RC_Check_Data_IS_ERROR;
 }
 
 /**
@@ -96,7 +97,7 @@ void detect_hook(uint8_t toe) {
     } else {
         error_list[toe].data_is_error = 0;
     }
-    PGout((toe + 1)) = 0;
+//    PGout((toe + 1)) = 0;
 }
 
 /**
