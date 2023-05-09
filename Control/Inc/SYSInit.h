@@ -23,6 +23,11 @@
 
 #define Chassis_MAX_Output 6000
 
+#define Camara_Horizontal_PITCH_POS 7960
+#define Camara_DOWM_PITCH_POS 7960
+#define Camara_FORWARD_YAW_POS 0
+#define Camara_Ore_YAW_POS 0
+
 /*  系统头文件 */
 #include <stdlib.h>
 #include <stdio.h>

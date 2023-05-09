@@ -338,4 +338,15 @@ void Chassis_PowerOff_Drive(C_t *C) {
 }
 
 
+void Chassis_CameraTransmission_Drive(C_t *C,int32_t pitch, int32_t yaw) {
+    motor_position_speed_control(&C->CameraTransmission.Pitch_Motor.SPID, &C->CameraTransmission.Pitch_Motor.PPID, 7960,
+                                 C->CameraTransmission.Pitch_Motor.Encoder->Encode_Actual_Val, C->CameraTransmission.Pitch_Motor.Encoder->Speed[1]);
+    CAN1_C620_OR_C610_205_TO_208_SendMsg(C->CameraTransmission.Pitch_Motor.SPID.out, 0, 0, 0);
+}
 
+
+void Chassis_CameraTransmission_Auto_Drive(C_t *C,int32_t pitch, int32_t yaw) {
+    motor_position_speed_control(&C->CameraTransmission.Pitch_Motor.SPID, &C->CameraTransmission.Pitch_Motor.PPID, 7960,
+                                 C->CameraTransmission.Pitch_Motor.Encoder->Encode_Actual_Val, C->CameraTransmission.Pitch_Motor.Encoder->Speed[1]);
+    CAN1_C620_OR_C610_205_TO_208_SendMsg(C->CameraTransmission.Pitch_Motor.SPID.out, 0, 0, 0);
+}

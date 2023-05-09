@@ -19,6 +19,12 @@ typedef enum {
     Global_Status_End
 } Global_Status_e;
 
+typedef enum {
+    Camara_To_Horizontal = 0,
+    Camara_To_Ore = 1,
+    Camara_To_RescueCatch = 2,
+    Camara_Status_End
+} Camara_Status_e;
 
 /****************键盘控制状态结构体**************************/
 typedef __packed struct
@@ -54,8 +60,11 @@ typedef __packed struct
     //分为整车状态和自动状态
     // global status
     unsigned char Global_Status : 1 ; //0时为底盘独立模式，1为取矿独立模式
+    //图传状态
+    //camera statues
+    unsigned char Camera_Status: 2 ;//0为正常的视角，1为看矿石视角，2为看救援抓
+    //如何切换三个状态的？status+1%3 或者%2
 
-    //
 
 
 } KeyBoard_State_t;

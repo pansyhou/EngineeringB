@@ -137,6 +137,22 @@ static void Key_Mouse_Deal(void)
         REMOTE.state.Global_Status = 1 - REMOTE.state.Global_Status;
     }
 
+
+    //切换图传位置到救援抓快捷键
+    if (key & KEY_PRESSED_OFFSET_CTRL && key & KEY_PRESSED_OFFSET_Q) {
+        if(!(REMOTE.last_key & KEY_PRESSED_OFFSET_Q)) {
+            REMOTE.state.Camera_Status = Camara_To_RescueCatch;
+        }
+    } //没按下快捷键,didnt press ctrl and q
+    else if (!(key & KEY_PRESSED_OFFSET_CTRL) && key & KEY_PRESSED_OFFSET_Q) {
+        if(!(REMOTE.last_key & KEY_PRESSED_OFFSET_Q)) {
+            //only switch to Camara_To_Horizontal or Camara_To_Ore
+            REMOTE.state.Camera_Status = (REMOTE.state.Camera_Status + 1) % 2;
+        }
+    }
+
+
+
     /*************************************底盘前后*********************************/
     if (key & KEY_PRESSED_OFFSET_W)
     {

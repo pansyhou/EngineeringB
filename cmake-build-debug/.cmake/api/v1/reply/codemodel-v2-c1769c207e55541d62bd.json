@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.24"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Engineering_B_2023_C_Board",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Engineering_B_2023_C_Board.elf::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Engineering_B_2023_C_Board.elf-Debug-f6f8ea3b41317a456d62.json",
+					"name" : "Engineering_B_2023_C_Board.elf",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug",
+		"source" : "/media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

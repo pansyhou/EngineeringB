@@ -1,0 +1,3 @@
+/media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug/CMakeFiles/Engineering_B_2023_C_Board.elf.dir
+/media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug/CMakeFiles/rebuild_cache.dir

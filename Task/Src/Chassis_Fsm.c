@@ -21,6 +21,7 @@
 #include "Chassis_Task.h"
 #include "bsp_can.h"
 #include "SYSInit.h"
+#include "RemoteDeal.h"
 /*底盘控制总结构体*/
 extern Chassis_t Chassis;
 
@@ -178,13 +179,26 @@ static void KeyBoard_State(void)       /*键盘状态处理*/
 //    }
 }
 
+//底盘独立模式：
 static void KeyBoard_bhv(void)       /*键盘状态处理*/
 {
     if (Chassis.RC->state.Global_Status == Follow_Independent) {
         Chassis.Indepen(&Chassis.C, -Chassis.RC->RC_ctrl->key.kv0, -Chassis.RC->RC_ctrl->key.kv1,
                         -Chassis.RC->RC_ctrl->mouse.x*Chassis_Mouse_Speed_Exp, Chassis_Speed_Exp);
+        switch (Chassis.RC->state.Camera_Status) {
+            case Camara_To_Horizontal:{
+                Chassis_CameraTransmission_Auto_Drive(&Chassis.C, Camara_Horizontal_PITCH_POS, Camara_FORWARD_YAW_POS);
+            }break;
+            case Camara_To_Ore:{
+                Chassis_CameraTransmission_Auto_Drive(&Chassis.C, Camara_Horizontal_PITCH_POS, Camara_Ore_YAW_POS);
+            }break;
+            case Camara_To_RescueCatch: {
+                Chassis_CameraTransmission_Auto_Drive(&Chassis.C, Camara_DOWM_PITCH_POS, Camara_FORWARD_YAW_POS);
+            }break;
+        }
 
     }
+
 }
 
 

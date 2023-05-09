@@ -34,7 +34,7 @@ static void Chassis_Init(void)
     Chassis.Wheel_Init(&Chassis.C);     //轮子初始化
     Chassis.Fsm=Return_Chassis_FSM();   //获取fsm状态机指针
     Chassis.Fsm_Init();                 //状态机初始化
-
+    vTaskDelay(20);
 }
 
 

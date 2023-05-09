@@ -119,8 +119,7 @@ typedef __packed struct
     int32_t WheelMotor_EPB_Pos[4];
     Lift_UP_t liftUp;
     Camera_Transmission_t CameraTransmission;
-//	PYR_t *gyro;
-	// PIDTypeDef Yaw_Pid;
+
 	void (*Can_Send_Wheel)(int16_t,int16_t,int16_t,int16_t);
 	void (*Can_Send_Gm6020)(int16_t,int16_t,int16_t,int16_t);
 	void (*Can1_Send_205_TO_208)(int16_t,int16_t,int16_t,int16_t);
@@ -173,5 +172,7 @@ void Chassis_Indepen_Drive(C_t *C, float X_IN, float Y_IN, float Z_IN, int16_t E
 void Motor_Data_Deal(CAN_RxHeaderTypeDef *header, uint8_t *data);
 void Chassis_PowerOff_Drive(C_t *C);
 void Lift_Up_Drive(C_t *C,int32_t UP_IN);
+void Chassis_CameraTransmission_Drive(C_t *C,int32_t pitch, int32_t yaw);
+void Chassis_CameraTransmission_Auto_Drive(C_t *C,int32_t pitch, int32_t yaw);
 #endif
 
