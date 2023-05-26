@@ -13,6 +13,17 @@ zx用于救援抓、e切换跟随和不跟随,q切换图传视角（就是切换
 
 ### 挖矿模式
 
+qe roll ,zx抬升,cv前伸,f切换图传,b对狂ChassisMotor
+这里将所有的驱动都塞进去了
+
+cs用于小pitch ，r切换图传，切换跟随和不跟随
+
+
+
+这里想到了qmk的方案，ctrl shift用来切换key layout，可用的layout就有3层，只是减少了两个按键
+
+通过滤波来实现微调
+
 
 
 

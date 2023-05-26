@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ��Vision V5.38.0.0
 Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 1 1677195845@qq.com, 1, LIC=UJWP0-B11JP-MMP9I-TDNL4-7AGNY-2FDV7
+License Information: 1 1677195845@qq.com, 1, LIC=03C6R-KRYTR-DY9V3-AND9L-WUZXH-DR486
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
@@ -22,25 +22,102 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 C:\Users\16771\Desktop\Engineering2023_MatchCode\Engineering_B_2023_C_Board\MDK-ARM\Engineering_B_2023_C_Board.uvprojx
-Project File Date:  04/30/2023
+Project File Date:  05/16/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Engineering_B_2023_C_Board'
 compiling ChassisMotor.c...
+../Task/Inc/Chassis_Task.h(10): error:  #20: identifier "C_t" is undefined
+  	C_t C;
+../Task/Inc/Chassis_Task.h(11): error:  #20: identifier "REMOTE_t" is undefined
+  	REMOTE_t *RC;
+../Task/Inc/Chassis_Task.h(15): error:  #20: identifier "C_t" is undefined
+  	void (*Wheel_Init)(C_t *C);						//轮子电机初始�?
+../Task/Inc/Chassis_Task.h(17): error:  #20: identifier "C_t" is undefined
+  	void (*Indepen)(C_t*,float ,float ,float  ,int16_t);	//底盘跟随
+../Task/Inc/Chassis_Task.h(23): error:  #20: identifier "C_t" is undefined
+  	void (*Poweroff)(C_t*);	                          	//底盘断电
 ..\Control\Src\ChassisMotor.c(242): warning:  #177-D: variable "Val"  was declared but never referenced
       int16_t Val[4] = {0, 0, 0, 0}; //记录电机实时速度�??
 ..\Control\Src\ChassisMotor.c(243): warning:  #177-D: variable "MAX"  was declared but never referenced
       int16_t MAX = 0;               //四个电机里的�??大�?�度
 ..\Control\Src\ChassisMotor.c(244): warning:  #177-D: variable "SPID_OUT"  was declared but never referenced
       float SPID_OUT[4];             // PIDout
-..\Control\Src\ChassisMotor.c(313): warning:  #223-D: function "abs" declared implicitly
-      else if(abs(abs(Lift_MotorLockPos[0])- abs(C->liftUp.Lift_Motor[0].Encoder->Encode_Record_Val))>MAX_ABS_HIGHT){
-..\Control\Src\ChassisMotor.c: 4 warnings, 0 errors
-linking...
-Program Size: Code=32640 RO-data=940 RW-data=432 ZI-data=54688  
-FromELF: creating hex file...
-"Engineering_B_2023_C_Board\Engineering_B_2023_C_Board.axf" - 0 Error(s), 4 Warning(s).
+..\Control\Src\ChassisMotor.c: 3 warnings, 5 errors
+compiling RemoteDeal.c...
+../Task/Inc/Chassis_Task.h(11): error:  #20: identifier "REMOTE_t" is undefined
+  	REMOTE_t *RC;
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+..\Control\Src\RemoteDeal.c: 0 warnings, 2 errors
+compiling BoardCommuni.c...
+../Task/Inc/Chassis_Task.h(11): error:  #20: identifier "REMOTE_t" is undefined
+  	REMOTE_t *RC;
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+..\Control\Src\BoardCommuni.c: 0 warnings, 2 errors
+compiling stm32f4xx_it.c...
+../Control/Inc/RemoteDeal.h(75): error:  #20: identifier "RC_ctrl_t" is undefined
+      RC_ctrl_t *RC_ctrl;
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+../Core/Src/stm32f4xx_it.c: 0 warnings, 2 errors
+compiling Remote_Task.c...
+../Task/Inc/Chassis_Task.h(11): error:  #20: identifier "REMOTE_t" is undefined
+  	REMOTE_t *RC;
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+..\Task\Src\Remote_Task.c: 0 warnings, 2 errors
+compiling bsp_can.c...
+../ACE-ECF/Bsp/Inc/bsp_usb.h(9): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+..\ACE-ECF\Bsp\Src\bsp_can.c: 1 warning, 1 error
+compiling Detect_Task.c...
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+..\Task\Src\Detect_Task.c(59): warning:  #513-D: a value of type "bool_t (*)(void)" cannot be assigned to an entity of type "void (*)(void)"
+      error_list[DBUS_TOE].solve_lost_fun = &RC_Check_Data_IS_ERROR;
+..\Task\Src\Detect_Task.c(206): warning:  #1-D: last line of file ends without a newline
+  }
+..\Task\Src\Detect_Task.c: 2 warnings, 1 error
+compiling bsp_dr16.c...
+../Control/Inc/RemoteDeal.h(75): error:  #20: identifier "RC_ctrl_t" is undefined
+      RC_ctrl_t *RC_ctrl;
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+..\ACE-ECF\Bsp\Src\bsp_dr16.c: 0 warnings, 2 errors
+compiling Chassis_Task.c...
+../Task/Inc/Chassis_Task.h(10): error:  #20: identifier "C_t" is undefined
+  	C_t C;
+../Task/Inc/Chassis_Task.h(11): error:  #20: identifier "REMOTE_t" is undefined
+  	REMOTE_t *RC;
+../Task/Inc/Chassis_Task.h(15): error:  #20: identifier "C_t" is undefined
+  	void (*Wheel_Init)(C_t *C);						//轮子电机初始�?
+../Task/Inc/Chassis_Task.h(17): error:  #20: identifier "C_t" is undefined
+  	void (*Indepen)(C_t*,float ,float ,float  ,int16_t);	//底盘跟随
+../Task/Inc/Chassis_Task.h(23): error:  #20: identifier "C_t" is undefined
+  	void (*Poweroff)(C_t*);	                          	//底盘断电
+..\Task\Src\Chassis_Task.c: 0 warnings, 5 errors
+compiling main.c...
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+../Core/Src/main.c: 0 warnings, 1 error
+compiling SYSInit.c...
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+..\Control\Src\SYSInit.c(61): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Control\Src\SYSInit.c: 1 warning, 1 error
+compiling Chassis_Fsm.c...
+../Control/Inc/RemoteDeal.h(75): error:  #20: identifier "RC_ctrl_t" is undefined
+      RC_ctrl_t *RC_ctrl;
+../Task/Inc/Chassis_Task.h(10): error:  #1032: Definition of nested anonymous struct in packed "struct <unnamed>" must be __packed
+  	C_t C;
+..\Task\Src\Chassis_Fsm.c: 0 warnings, 2 errors
+"Engineering_B_2023_C_Board\Engineering_B_2023_C_Board.axf" - 26 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -51,20 +128,21 @@ Package Vendor: ARM
    * Component: CORE Version: 5.6.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.16.0.pack
-                Keil.STM32F4xx_DFP.2.16.0
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.0.pack
+                Keil.STM32F4xx_DFP.2.17.0
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
   ./RTE/_Engineering_B_2023_C_Board
   C:/Users/16771/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
-  C:/Users/16771/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+  C:/Users/16771/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:03
+Target not created.
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

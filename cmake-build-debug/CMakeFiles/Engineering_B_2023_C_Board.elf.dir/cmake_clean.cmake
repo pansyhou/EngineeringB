@@ -1,4 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Algorithm/src/fifo.c.obj"
+  "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Algorithm/src/fifo.c.obj.d"
+  "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Algorithm/src/filter.c.obj"
+  "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Algorithm/src/filter.c.obj.d"
+  "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Algorithm/src/maths.c.obj"
+  "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Algorithm/src/maths.c.obj.d"
+  "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Algorithm/src/pid.c.obj"
+  "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Algorithm/src/pid.c.obj.d"
   "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Bsp/Src/bsp_Motor_Encoder.c.obj"
   "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Bsp/Src/bsp_Motor_Encoder.c.obj.d"
   "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/ACE-ECF/Bsp/Src/bsp_buzzer.c.obj"
@@ -150,6 +158,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj"
   "CMakeFiles/Engineering_B_2023_C_Board.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj.d"
   "Engineering_B_2023_C_Board.elf"
+  "Engineering_B_2023_C_Board.elf.manifest"
   "Engineering_B_2023_C_Board.elf.pdb"
 )
 

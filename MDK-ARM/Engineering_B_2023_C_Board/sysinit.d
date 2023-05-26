@@ -45,6 +45,7 @@ engineering_b_2023_c_board\sysinit.o: ../Core/Inc/usart.h
 engineering_b_2023_c_board\sysinit.o: ../Core/Inc/main.h
 engineering_b_2023_c_board\sysinit.o: ../ACE-ECF/Algorithm/inc/struct_typedef.h
 engineering_b_2023_c_board\sysinit.o: ../ACE-ECF/Bsp/Inc/ECF_BspConfig.h
+engineering_b_2023_c_board\sysinit.o: ../Control/Inc/SYSInit.h
 engineering_b_2023_c_board\sysinit.o: ../ACE-ECF/Algorithm/inc/filter.h
 engineering_b_2023_c_board\sysinit.o: ../Middlewares/ST/ARM/DSP/Inc/arm_math.h
 engineering_b_2023_c_board\sysinit.o: ../Drivers/CMSIS/Include/core_cm4.h

@@ -113,7 +113,7 @@ typedef __packed struct _Camera_Transmission
 
 
 /*底盘结构体*/
-typedef __packed struct
+typedef  struct
 {
 	Motor_t WheelMotor[7];
     int32_t WheelMotor_EPB_Pos[4];

@@ -1,19 +1,19 @@
-/snap/clion/235/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board -B /media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug
--- The C compiler identification is GNU 12.2.1
--- The CXX compiler identification is GNU 12.2.1
+C:\Users\16771\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.8770.66\bin\cmake\win\x64\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=C:/armgcc/bin/arm-none-eabi-gcc.exe -DCMAKE_CXX_COMPILER=C:/armgcc/bin/arm-none-eabi-g++.exe -G "CodeBlocks - MinGW Makefiles" -S C:\Users\16771\Desktop\Engineering2023_MatchCode\Engineering_B_2023_C_Board -B C:\Users\16771\Desktop\Engineering2023_MatchCode\Engineering_B_2023_C_Board\cmake-build-debug
+-- The C compiler identification is GNU 10.3.1
+-- The CXX compiler identification is GNU 10.3.1
 -- The ASM compiler identification is GNU
--- Found assembler: /home/pansy/armgcc/bin/arm-none-eabi-gcc
+-- Found assembler: C:/armgcc/bin/arm-none-eabi-gcc.exe
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: /home/pansy/armgcc/bin/arm-none-eabi-gcc - skipped
+-- Check for working C compiler: C:/armgcc/bin/arm-none-eabi-gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /home/pansy/armgcc/bin/arm-none-eabi-g++ - skipped
+-- Check for working CXX compiler: C:/armgcc/bin/arm-none-eabi-g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Minimal optimization, debug info included
 -- Configuring done
 -- Generating done
--- Build files have been written to: /media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug
+-- Build files have been written to: C:/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug

@@ -1,6 +1,11 @@
 #ifndef __SYS_INIT_H
 #define __SYS_INIT_H
 
+
+//这两个宏定义主要还是在Core和SYSInit里，针对不同的uart有不同初始化
+//#define configUSE_Vet6
+#define configUSE_C_Board
+
 #define DEBUG_Mode 1
 #define LOG_SOURCE 1
 
@@ -27,6 +32,10 @@
 #define Camara_DOWM_PITCH_POS 7960
 #define Camara_FORWARD_YAW_POS 0
 #define Camara_Ore_YAW_POS 0
+
+#define CAN2_BoardCom_STDID1 0x100
+#define CAN2_BoardCom_STDID2 0x102
+
 
 /*  系统头文件 */
 #include <stdlib.h>

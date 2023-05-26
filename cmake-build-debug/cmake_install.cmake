@@ -1,8 +1,8 @@
-# Install script for directory: /media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board
+# Install script for directory: C:/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Engineering_B_2023_C_Board")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/media/windows/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/16771/Desktop/Engineering2023_MatchCode/Engineering_B_2023_C_Board/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

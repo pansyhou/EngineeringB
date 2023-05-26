@@ -8,6 +8,7 @@
 #ifndef __REMOTEDEAL_H_
 #define __REMOTEDEAL_H_
 #include "bsp_dr16.h"
+#include "stm32f4xx_hal_def.h"
 #include "filter.h"
 #include <Detect_Task.h>
 #include "pid.h"
@@ -62,15 +63,14 @@ typedef __packed struct
     unsigned char Global_Status : 1 ; //0时为底盘独立模式，1为取矿独立模式
     //图传状态
     //camera statues
-    unsigned char Camera_Status: 2 ;//0为正常的视角，1为看矿石视角，2为看救援抓
+    unsigned char Camera_Status : 2 ;//0为正常的视角，1为看矿石视角，2为看救援抓
     //如何切换三个状态的？status+1%3 或者%2
-
 
 
 } KeyBoard_State_t;
 
 /*Remote结构体*/
-typedef __packed struct
+typedef  struct
 {
     RC_ctrl_t *RC_ctrl;
     uint16_t last_key;

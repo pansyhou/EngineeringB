@@ -9,22 +9,22 @@
 
 
 /************************** Dongguan-University of Technology -ACE**************************
- * @brief ÏµÍ³Ó²¼þÅäÖÃ³õÊ¼»¯£¬±ØÐëÐ´ÔÚFreeRTOS¿ªÊ¼Ö®Ç°
+ * @brief ÏµÍ³Ó²ï¿½ï¿½ï¿½ï¿½ï¿½Ã³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½FreeRTOSï¿½ï¿½Ê¼Ö®Ç°
  *
  ************************** Dongguan-University of Technology -ACE***************************/
 void Sys_Init(void) {
 #if DEBUG_Mode
-//	SEGGER_SYSVIEW_Conf(); // SystemViewµ÷ÊÔ³õÊ¼»¯
+//	SEGGER_SYSVIEW_Conf(); // SystemViewï¿½ï¿½ï¿½Ô³ï¿½Ê¼ï¿½ï¿½
 //	// SEGGER_SYSVIEW_Start();//
 //
-//	//³õÊ¼»¯DWT¼ÆÊýÆ÷,SystemView»á´ÓDWTµÄCycle counter»ñÈ¡ÏµÍ³µ±Ç°ÖÜÆÚÊýÓÃÓÚÉú³ÉÊ±¼ä´Á
+//	//ï¿½ï¿½Ê¼ï¿½ï¿½DWTï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,SystemViewï¿½ï¿½ï¿½DWTï¿½ï¿½Cycle counterï¿½ï¿½È¡ÏµÍ³ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½
 //	CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
 //	DWT->CYCCNT = 0;
 //	DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 #endif
     ECF_RC_Init();
     ECF_CAN_Init();
-    //Ò£¿Ø³õÊ¼»¯
+
     Remote_Data_Init();
 #if LOG_SOURCE==1
     SEGGER_RTT_Init();
@@ -38,7 +38,7 @@ void Sys_Init(void) {
 #if LOG_SOURCE==1
 
 /**
- * ²âÊÔÓÃµÄlogÊä³ö£¬×Ô´ø»»ÐÐ£¬Ä¿Ç°°æ±¾ÊÇ²ÉÓÃRTT viewerÀ´×ª·¢£¬Èý¸öµãÊÇprintfµÄ¿É±ä²ÎÊý
+ * ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½logï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ð£ï¿½Ä¿Ç°ï¿½æ±¾ï¿½Ç²ï¿½ï¿½ï¿½RTT viewerï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½printfï¿½Ä¿É±ï¿½ï¿½ï¿½ï¿½
  * @param format
  * @param ...
  */
